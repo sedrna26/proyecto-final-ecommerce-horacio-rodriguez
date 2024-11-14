@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/05853e8099.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo-icono-02.ico">
+</head>
+<body>
+
+    <div class="wrapper">
+        <aside>
+            <header>
+                <img class="logo" src="./img/logo-01.png" alt="Logo">
+                <button id= "abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+                <nav class="nav" id="nav">
+                    <button class="cerrar-menu" id="cerrar"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="suscripciones.html">Suscripciones</a></li>
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </nav>
+            </header>
+        </aside>
+
+        <main class="main-index">
+            <!--Inicio deslizador de imagenes-->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="img/slider/img-desliza-1.jpg" alt="img-slider-1"></div>
+                    <div class="slide"><img src="img/slider/img-desliza-2.jpg" alt="img-slider-2"></div>
+                    <div class="slide"><img src="img/slider/img-desliza-3.jpg" alt="img-slider-3"></div>
+                    <div class="slide"><img src="img/slider/img-desliza-4.jpg" alt="img-slider-4"></div>
+                    <div class="slide"><img src="img/slider/img-desliza-5.jpg" alt="img-slider-5"></div>
+                </div>
+                <div class="navigation">
+                    <div class="prev"><i class="fas fa-chevron-left"></i></div>
+                    <div class="next"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+            
+            <!--Fin deslizador de imagenes-->
+            <div class="mas-vendidos">
+                <div>
+                    <h2>Más vendidos</h2>
+                </div>
+                <div class="conteiner-items">
+                    <div class="item">
+                        <figure>
+                            <img src="img/sillon_07.jpg" alt="silla_austria">
+                        </figure>
+                        <div class="info-product">
+                            <h2>Sofa Austria</h2>
+                            <div class="price">$95.000,00</div>
+                            <button>Añadir al carrito</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="img/sillon_08.jpg" alt="sillon_mallorca">
+                        </figure>
+                        <div class="info-product">
+                            <h2>Sillón Mallorca</h2>
+                            <div class="price">$165.900,00</div>
+                            <button>Añadir al carrito</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="img/sillon_03.jpg" alt="sofa_pekin">
+                        </figure>
+                        <div class="info-product">
+                            <h2>Sofa Pekin</h2>
+                            <div class="price">$570.000,00</div>
+                            <button>Añadir al carrito</button>
+                        </div>
+                    </div>
+                    
+            </div>
+
+        </main>
+
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="#">
+                            <img src="img/logo-natural.png" alt="logo design home">
+                        </a>
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2>+Info</h2>
+                    <p>Dirección: Malabia 1780 <br>WhatsApp: 11-4657-3320 <br>E-mail: info@designhome.com</p>
+                </div>
+                <div class="box">
+                    <h2>Seguinos</h2>
+                    <div class="red-social">
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2024 <b>Design Home</b> -Todos los derechos reservados.</small>
+            </div>    
+        </footer>
+    </div>
+
+
+
+
+    <script src="./js/main.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

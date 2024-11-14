@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/05853e8099.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo-icono-02.ico">
+</head>
+<body>
+
+    <div class="wrapper">
+        <aside>
+            <header>
+                <img class="logo" src="./img/logo-01.png" alt="Logo">
+                <button id= "abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+                <nav class="nav" id="nav">
+                    <button class="cerrar-menu" id="cerrar"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="suscripciones.html">Suscripciones</a></li>
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </nav>
+            </header>
+        </aside>
+
+        <main class="main-suscripciones">
+            <h1 class="titulo-suscripciones">Suscripciones</h1>
+            <div class="conteiner-suscripciones">
+                <div class="texto-suscripciones">
+                    <h2>Suscríbete para recibir todas nuestras novedades y no perderte ningún descuento.</h2>
+                </div>
+                <div class="formulario-suscripciones">
+                    <form class="form" action="">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                        <br>
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" required>
+                        <br>
+                        <input type="submit" value="Suscribirse">
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="#">
+                            <img src="img/logo-natural.png" alt="logo design home">
+                        </a>
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2>+Info</h2>
+                    <p>Dirección: Malabia 1780 <br>WhatsApp: 11-4657-3320 <br>E-mail: info@designhome.com</p>
+                </div>
+                <div class="box">
+                    <h2>Seguinos</h2>
+                    <div class="red-social">
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2024 <b>Design Home</b> -Todos los derechos reservados.</small>
+            </div>    
+        </footer>
+    </div>
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
