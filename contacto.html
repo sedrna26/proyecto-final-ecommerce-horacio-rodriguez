@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,18 @@
     <script src="https://kit.fontawesome.com/05853e8099.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="img/logo-icono-02.ico">
 </head>
+
 <body>
 
     <div class="wrapper">
         <aside>
             <header>
-                <img class="logo" src="./img/logo-01.png" alt="Logo">
-                <button id= "abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+                <a href="index.html"><img class="logo" src="./img/logo-01.png" alt="Logo"></a>
+                <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
                 <nav class="nav" id="nav">
                     <button class="cerrar-menu" id="cerrar"><i class="fa-regular fa-rectangle-xmark"></i></button>
                     <ul class="nav-list">
@@ -25,7 +28,12 @@
                         <li><a href="productos.html">Productos</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="suscripciones.html">Suscripciones</a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li>
+                            <a href="#" id="cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count">0</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -39,7 +47,10 @@
                     <p>Ventas, Consultas y Servicio Posventa al 11-4657-3320</p>
                     <p>E-mail: info@designhome.com</p>
                     <br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.578526821922!2d-58.42816612416392!3d-34.58952967295937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58779281f47%3A0x23a8a014b0291c68!2sMalabia%201780%2C%20C1414DMJ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714928872177!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.578526821922!2d-58.42816612416392!3d-34.58952967295937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58779281f47%3A0x23a8a014b0291c68!2sMalabia%201780%2C%20C1414DMJ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1714928872177!5m2!1ses-419!2sar"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="formulario-contacto">
                     <form class="form" action="">
@@ -52,7 +63,8 @@
                         <label for="teléfono">Telefono</label>
                         <input type="text" name="telefono">
                         <br>
-                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Ingrese su mensaje"></textarea>
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="10"
+                            placeholder="Ingrese su mensaje"></textarea>
                         <br>
                         <div class="contenedor-btn-cont">
                             <input type="submit" value="Enviar">
@@ -63,8 +75,22 @@
             </div>
 
 
-    
+
         </main>
+        <!-- Modal de Carrito -->
+        <div id="cart-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Carrito de Compras</h2>
+                <div id="cart-items">
+                    <!-- Items del carrito se renderizarán aquí -->
+                </div>
+                <div id="cart-total">
+                    <!-- Total del carrito -->
+                </div>
+                <button id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
 
         <footer class="pie-pagina">
             <div class="grupo-1">
@@ -90,7 +116,7 @@
             </div>
             <div class="grupo-2">
                 <small>&copy; 2024 <b>Design Home</b> -Todos los derechos reservados.</small>
-            </div>    
+            </div>
         </footer>
     </div>
 
@@ -99,4 +125,5 @@
 
     <script src="./js/main.js"></script>
 </body>
+
 </html>

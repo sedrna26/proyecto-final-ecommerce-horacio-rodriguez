@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,17 @@
     <script src="https://kit.fontawesome.com/05853e8099.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="img/logo-icono-02.ico">
 </head>
-<body>
 
+<body>
     <div class="wrapper">
         <aside>
             <header>
-                <img class="logo" src="./img/logo-01.png" alt="Logo">
-                <button id= "abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+                <a href="index.html"><img class="logo" src="./img/logo-01.png" alt="Logo"></a>
+                <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
                 <nav class="nav" id="nav">
                     <button class="cerrar-menu" id="cerrar"><i class="fa-regular fa-rectangle-xmark"></i></button>
                     <ul class="nav-list">
@@ -25,77 +27,40 @@
                         <li><a href="productos.html">Productos</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="suscripciones.html">Suscripciones</a></li>
-                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li>
+                            <a href="#" id="cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span id="cart-count">0</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
         </aside>
 
-        <main class="mainContainer">
-            <div class="conteiner-items">
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_01.jpg" alt="silla_berlin">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Silla Berlín</h2>
-                        <div class="price">$85.000,00</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_02.jpg" alt="sillon_praga">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Sillón Praga</h2>
-                        <div class="price">$355.900,00</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_03.jpg" alt="sofa_pekin">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Sofa Pekin</h2>
-                        <div class="price">$570.000,00</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_04.jpg" alt="sillon_amsterdam">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Sillón Amsterdam</h2>
-                        <div class="price">$292.999,90</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_05.jpg" alt="sillon_ibiza">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Sillón Ibiza</h2>
-                        <div class="price">$780.000,00</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
-                <div class="item">
-                    <figure>
-                        <img src="img/sillon_06.jpg" alt="sillon_budapest">
-                    </figure>
-                    <div class="info-product">
-                        <h2>Sillón Budapest</h2>
-                        <div class="price">$320.000,00</div>
-                        <button>Añadir al carrito</button>
-                    </div>
-                </div>
+        <main class="mas-vendidos">
+            <div>
+                <h2>Nuestros productos</h2>
             </div>
-    
+            <div id="conteiner-items" class="conteiner-items">
+                <!-- Productos se renderizan aca -->
+            </div>
         </main>
+
+        <!-- Modal de Carrito -->
+        <div id="cart-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Carrito de Compras</h2>
+                <div id="cart-items">
+                    <!-- Items del carrito se renderizarán aquí -->
+                </div>
+                <div id="cart-total">
+                    <!-- Total del carrito -->
+                </div>
+                <button id="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
 
         <footer class="pie-pagina">
             <div class="grupo-1">
@@ -121,13 +86,11 @@
             </div>
             <div class="grupo-2">
                 <small>&copy; 2024 <b>Design Home</b> -Todos los derechos reservados.</small>
-            </div>    
+            </div>
         </footer>
     </div>
 
-
-
-
     <script src="./js/main.js"></script>
 </body>
+
 </html>

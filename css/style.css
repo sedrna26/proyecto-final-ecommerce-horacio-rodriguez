@@ -23,23 +23,27 @@ header {
 .logo {
     max-width: 9rem;
 }
+
 .nav-list {
     list-style-type: none;
     display: flex;
     gap: 1rem;
 }
+
 .nav-list li a {
     font-family: Sofia Sans, sans-serif;
     font-size: 0.8rem;
     text-decoration: none;
     color: #a7a393;
 }
+
 .abrir-menu {
     color: #a7a393;
     text-decoration: none;
     width: 45px;
     height: 45px;
 }
+
 .cerrar-menu {
     color: #E5DDC5;
     text-align: right;
@@ -47,11 +51,14 @@ header {
     width: 50px;
     height: 50px;
 }
-.abrir-menu, 
+
+.abrir-menu,
 .cerrar-menu {
     display: none;
 }
+
 @media screen and (max-width: 550px) {
+
     .abrir-menu,
     .cerrar-menu {
         display: block;
@@ -103,6 +110,7 @@ header {
     padding: 0px;
     width: 100%;
 }
+
 .slider {
     position: relative;
     overflow: hidden;
@@ -153,6 +161,100 @@ header {
     margin-right: 10px;
 }
 
+/* Stilos del Carrito Modal */
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-item-price {
+    text-align: right;
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.6rem;
+    margin-left: 5px;
+}
+
+/* Stilos del Carrito Modal */
 
 .mas-vendidos {
     margin: 0px;
@@ -161,7 +263,8 @@ header {
     justify-content: center;
     text-align: center;
 }
-.main-index h2{
+
+.main-index h2 {
     margin: 0px;
     margin-top: 50px;
     padding: 30px 0px 0px 0px;
@@ -179,13 +282,16 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem
 }
+
 .item {
     border-radius: 10px;
 
 }
+
 .item:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
+
 .item img {
     width: 100%;
     height: 300px;
@@ -193,12 +299,15 @@ header {
     border-radius: 10px;
     transition: all .5s;
 }
+
 .item figure {
     overflow: hidden;
 }
+
 .item:hover img {
     transform: scale(1.2);
 }
+
 .info-product {
     padding: 15px 30px;
     line-height: 2;
@@ -206,10 +315,12 @@ header {
     flex-direction: column;
     gap: 0.2rem;
 }
+
 .price {
     font-size: 1rem;
     font-weight: 900;
 }
+
 .info-product button {
     border: none;
     background: none;
@@ -219,6 +330,7 @@ header {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 @media screen and (max-width: 800px) {
     .conteiner-items {
         width: 100%;
@@ -226,6 +338,7 @@ header {
         gap: 1.5rem;
     }
 }
+
 @media screen and (max-width: 550px) {
     .conteiner-items {
         width: 100%;
@@ -238,6 +351,7 @@ header {
 .mainContacto {
     width: 100%;
 }
+
 .conteiner-contacto {
     display: flex;
     width: 100%;
@@ -251,6 +365,7 @@ header {
     align-items: baseline;
     justify-content: center;
 }
+
 .titulo-contacto {
     margin: 0px;
     margin-top: 0px;
@@ -261,6 +376,7 @@ header {
     font-size: 1.5rem;
     width: 100%;
 }
+
 .texto-contacto p {
     margin-top: 0px;
     width: 100%;
@@ -270,11 +386,13 @@ header {
     color: black;
     padding: 30px 20px 10px;
 }
+
 .texto-contacto iframe {
     width: 80%;
     justify-content: center;
     padding: 10px 20px 10px;
 }
+
 .formulario-contacto {
     font-size: 0.9rem;
     margin-top: 0;
@@ -289,34 +407,40 @@ header {
 .email {
     padding-right: 15.44px;
 }
+
 .formulario-contacto .form input[type="text"] {
     background-color: #F1EEDC;
     width: 70%;
-    border:none;
+    border: none;
     padding: 3px;
 }
+
 .formulario-contacto .form input[type="submit"] {
     background-color: #a7a393;
     color: white;
     border: none;
     padding: 5px;
 }
+
 .formulario-contacto .form input[type="reset"] {
     background-color: #a7a393;
     color: white;
     border: none;
     padding: 5px;
 }
+
 .formulario-contacto .form textarea[name="mensaje"] {
     width: 90%;
     background-color: #F1EEDC;
     border: none;
     padding: 5px;
 }
+
 .contenedor-btn-cont {
     display: flex;
     justify-content: space-evenly;
 }
+
 @media screen and (max-width: 800px) {
     .conteiner-contacto {
         width: 90%;
@@ -325,6 +449,7 @@ header {
         padding: 35px 0px;
     }
 }
+
 @media screen and (max-width: 550px) {
     .conteiner-contacto {
         width: 90%;
@@ -342,6 +467,7 @@ header {
     background-image: url(../img/sillon_10.jpg);
     background-position: bottom;
 }
+
 .titulo-suscripciones {
     padding: 30px 0px 0px 0px;
     color: black;
@@ -350,6 +476,7 @@ header {
     font-size: 1.5rem;
     width: 100%;
 }
+
 .conteiner-suscripciones {
     width: 70%;
     max-width: 1280px;
@@ -360,6 +487,7 @@ header {
     align-items: center;
     text-align: center;
 }
+
 .texto-suscripciones h2 {
     width: 100%;
     justify-content: center;
@@ -367,6 +495,7 @@ header {
     text-align: center;
     color: black;
 }
+
 .formulario-suscripciones {
     background-color: rgb(242, 239, 229, 0.8);
     border-radius: 10px;
@@ -374,25 +503,29 @@ header {
     object-fit: cover;
     font-size: 0.9rem;
     padding-top: 50px;
-    line-height: 3rem;  
+    line-height: 3rem;
     text-align: center;
 }
+
 .formulario-suscripciones .form input[type="text"] {
     background-color: #a7a393;
     width: 60%;
-    border:none;
+    border: none;
     padding: 3px;
 }
+
 .formulario-suscripciones .form input[type="submit"] {
     background-color: #B4B4B8;
     color: white;
     border: none;
     padding: 5px;
 }
+
 @media screen and (max-width: 800px) {
     .conteiner-suscripciones {
         width: 90%;
     }
+
     .texto-suscripciones h2 {
         width: 100%;
         font-size: 0.7rem;
@@ -405,6 +538,7 @@ header {
     width: 100%;
     background-color: #C7C8CC;
 }
+
 .pie-pagina .grupo-1 {
     width: 100%;
     max-width: 1280px;
@@ -414,6 +548,7 @@ header {
     gap: 50px;
     padding: 30px 0px;
 }
+
 .pie-pagina .grupo-1 .box figure {
     width: 100%;
     height: 100%;
@@ -421,19 +556,23 @@ header {
     justify-content: left;
     align-items: center;
 }
+
 .pie-pagina .grupo-1 .box figure img {
     width: 60%;
 }
+
 .pie-pagina .grupo-1 .box h2 {
     color: #F1EEDC;
     margin-bottom: 25px;
     font-size: 1.2rem;
 }
+
 .pie-pagina .grupo-1 .box p {
     color: #F1EEDC;
     margin-bottom: 10px;
     font-size: 0.8rem;
 }
+
 .pie-pagina .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
@@ -446,18 +585,22 @@ header {
     text-align: center;
     transition: all 300% ease;
 }
+
 .pie-pagina .grupo-1 .red-social a:hover {
     color: #a7a393;
 }
+
 .pie-pagina .grupo-2 {
     background-color: #B4B4B8;
     padding: 15px 0px;
     text-align: center;
     color: #F1EEDC;
 }
+
 .pie-pagina .grupo-2 small {
     font-size: 0.6rem;
 }
+
 @media screen and (max-width:800px) {
     .pie-pagina .grupo-1 {
         width: 90%;
