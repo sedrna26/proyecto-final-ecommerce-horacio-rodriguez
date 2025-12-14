@@ -751,16 +751,16 @@ Diciembre 2025
 
 ## 📄 Licencia
 
-Este proyecto fue desarrollado con fines educativos para el curso de Desarrollo de Software II.
+Este proyecto fue desarrollado con fines educativos para el curso de Back-End / Java - Talento Tech.
 
 ---
 
 ## 📞 Contacto y Soporte
 
 Para consultas sobre el proyecto:
-- 📧 Email del curso
-- 🎓 Instituto de Educación Superior
-- 📚 Materia: Desarrollo de Software II
+- 📧 sedrna26@gmail.com
+- 🧑 Horacio Andres Rodriguez
+- 📚 Curso: Back-End / Java - Talento Tech
 
 ---
 
