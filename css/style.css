@@ -601,6 +601,39 @@ header {
     font-size: 0.6rem;
 }
 
+/* Estilos adicionales para modal de productos */
+.close-product-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-product-modal:hover,
+.close-product-modal:focus {
+    color: black;
+}
+
+#product-modal .modal-content {
+    margin: 5% auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Estilos para botones hover */
+#btn-admin-mode:hover,
+#btn-add-product:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#search-input:focus,
+#category-filter:focus {
+    border-color: #007bff;
+}
+
 @media screen and (max-width:800px) {
     .pie-pagina .grupo-1 {
         width: 90%;

@@ -1,32 +1,68 @@
-const slides = document.querySelector('.slides');
-const slide = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-
+let slides;
+let slide;
+let prevBtn;
+let nextBtn;
 let index = 0;
+let intervalId = null;
 
-function updateSlide() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}
+function iniciarSlider() {
+    // Limpiar intervalo anterior si existe
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
 
-function nextSlide() {
-    index = (index === slide.length - 1) ? 0 : index + 1;
+    // Reinicializar elementos
+    slides = document.querySelector('.slides');
+    slide = document.querySelectorAll('.slide');
+    prevBtn = document.querySelector('.prev');
+    nextBtn = document.querySelector('.next');
+    index = 0;
+
+    console.log('🔄 Iniciando slider con', slide.length, 'slides');
+
+    // Si no hay slides, no hacer nada
+    if (!slide || slide.length === 0) {
+        console.log('⚠️ No se encontraron slides');
+        return;
+    }
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        index = (index === slide.length - 1) ? 0 : index + 1;
+        updateSlide();
+    }
+
+    function prevSlide() {
+        index = (index === 0) ? slide.length - 1 : index - 1;
+        updateSlide();
+    }
+
+    // Remover listeners antiguos y agregar nuevos
+    if (prevBtn && nextBtn) {
+        prevBtn.removeEventListener('click', prevSlide);
+        nextBtn.removeEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    // Función para cambiar de diapositiva automáticamente cada 6 segundos
+    function autoSlide() {
+        intervalId = setInterval(() => {
+            nextSlide();
+        }, 6000);
+    }
+
+    // Iniciar transición automática
+    autoSlide();
+
+    // Asegurar que el primer slide esté visible
     updateSlide();
 }
 
-function prevSlide() {
-    index = (index === 0) ? slide.length - 1 : index - 1;
-    updateSlide();
-}
-
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
-
-// Función para cambiar de diapositiva automáticamente cada 3 segundos
-function autoSlide() {
-    setInterval(() => {
-        nextSlide();
-    }, 6000); // Cambiar de diapositiva cada 6 segundos (6000 milisegundos)
-}
-
-autoSlide(); // Llamar a la función para iniciar la transición automática
+// Inicializar el slider cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    iniciarSlider();
+});

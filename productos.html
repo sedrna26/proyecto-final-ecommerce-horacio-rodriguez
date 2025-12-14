@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="img/logo-icono-02.ico">
 </head>
 
 <body>
@@ -25,8 +24,18 @@
                     <ul class="nav-list">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="productos.html">Productos</a></li>
+                        <li><a href="pedidos.html">Mis Pedidos</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                         <li><a href="suscripciones.html">Suscripciones</a></li>
+                        <li id="login-link"><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                        </li>
+                        <li id="logout-link" style="display: none;">
+                            <span id="user-info" style="color: #fff; margin-right: 10px;"></span>
+                            <a href="#"
+                                onclick="if(typeof authUtils !== 'undefined') authUtils.logout(); return false;">
+                                <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+                            </a>
+                        </li>
                         <li>
                             <a href="#" id="cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -39,9 +48,43 @@
         </aside>
 
         <main class="mas-vendidos">
-            <div>
+            <div style="margin-bottom: 20px;">
                 <h2>Nuestros productos</h2>
+
+                <!-- Barra de búsqueda y administración -->
+                <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; align-items: center;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <input type="text" id="search-input" placeholder="🔍 Buscar productos..."
+                            style="width: 100%; padding: 10px 15px; border: 2px solid #ddd; border-radius: 25px; font-size: 14px; outline: none; transition: border-color 0.3s;">
+                    </div>
+
+                    <select id="category-filter"
+                        style="padding: 10px 15px; border: 2px solid #ddd; border-radius: 25px; font-size: 14px; outline: none; cursor: pointer;">
+                        <option value="">📁 Todas las categorías</option>
+                        <option value="Electrónica">Electrónica</option>
+                        <option value="Ropa">Ropa</option>
+                        <option value="Hogar">Hogar</option>
+                        <option value="Deportes">Deportes</option>
+                        <option value="Libros">Libros</option>
+                        <option value="Juguetes">Juguetes</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Accesorios">Accesorios</option>
+                    </select>
+
+                    <button id="btn-admin-mode"
+                        style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: background 0.3s;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Modo Admin</span>
+                    </button>
+
+                    <button id="btn-add-product"
+                        style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 600; display: none; align-items: center; gap: 8px; transition: background 0.3s;">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Agregar Producto</span>
+                    </button>
+                </div>
             </div>
+
             <div id="conteiner-items" class="conteiner-items">
                 <!-- Productos se renderizan aca -->
             </div>
@@ -62,12 +105,82 @@
             </div>
         </div>
 
+        <!-- Modal Crear/Editar Producto -->
+        <div id="product-modal" class="modal" style="display:none;">
+            <div class="modal-content" style="max-width: 600px;">
+                <span class="close-product-modal">&times;</span>
+                <h2 id="product-modal-title">Agregar Producto</h2>
+                <form id="product-form" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <input type="hidden" id="product-id">
+
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label for="product-nombre" style="font-weight: 600; color: #333;">Nombre *</label>
+                        <input type="text" id="product-nombre" required
+                            style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label for="product-descripcion" style="font-weight: 600; color: #333;">Descripción</label>
+                        <textarea id="product-descripcion" rows="3"
+                            style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label for="product-precio" style="font-weight: 600; color: #333;">Precio *</label>
+                            <input type="number" id="product-precio" step="0.01" min="0" required
+                                style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label for="product-stock" style="font-weight: 600; color: #333;">Stock *</label>
+                            <input type="number" id="product-stock" min="0" required
+                                style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label for="product-categoria" style="font-weight: 600; color: #333;">Categoría *</label>
+                        <select id="product-categoria" required
+                            style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; cursor: pointer;">
+                            <option value="">Seleccione una categoría</option>
+                            <option value="Electrónica">Electrónica</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Hogar">Hogar</option>
+                            <option value="Deportes">Deportes</option>
+                            <option value="Libros">Libros</option>
+                            <option value="Juguetes">Juguetes</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Accesorios">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label for="product-imagen" style="font-weight: 600; color: #333;">URL de Imagen</label>
+                        <input type="url" id="product-imagen" placeholder="https://ejemplo.com/imagen.jpg"
+                            style="padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <button type="submit"
+                            style="flex: 1; padding: 12px; background: #28a745; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+                            <i class="fa-solid fa-save"></i> Guardar
+                        </button>
+                        <button type="button" class="cancel-product-btn"
+                            style="flex: 1; padding: 12px; background: #6c757d; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+                            <i class="fa-solid fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <footer class="pie-pagina">
             <div class="grupo-1">
                 <div class="box">
                     <figure>
                         <a href="#">
-                            <img src="img/logo-natural.png" alt="logo design home">
+                            <img src="img/logo-01.png" alt="logo design home">
                         </a>
                     </figure>
                 </div>
@@ -90,6 +203,7 @@
         </footer>
     </div>
 
+    <script src="./js/auth.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
